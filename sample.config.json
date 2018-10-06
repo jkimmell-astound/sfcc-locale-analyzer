@@ -1,0 +1,13 @@
+{
+  "showMissingOnly": false,
+  "localesToUse": ["default", "de", "es", "fr", "it"],
+  "templateDir": "/cartridge/templates/resources/",
+  "cartridgtePrefix": "/full/path/to/repository/",
+  "cartridges": [
+    "/full/path/to/repository/cartridges/app_foo_bar",
+    "/full/path/to/repository/cartridges/app_foo_core",
+    "/full/path/to/repository/cartridges/int_foobar",
+    "/full/path/to/repository/cartridges/int_some_int",
+    "/full/path/to/repository/dependencies/sitegenesis-community/app_storefront_core"
+  ]
+}

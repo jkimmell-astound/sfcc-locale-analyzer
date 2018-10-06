@@ -1,0 +1,17 @@
+{
+  "name": "sfcc-locale-analyzer",
+  "version": "1.0.0",
+  "description": "Analyze SFCC Locale Property Files and generate a report",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "James Kimmell <kimmellj@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+  },
+  "dependencies": {
+    "properties-reader": "0.0.16"
+  }
+}
