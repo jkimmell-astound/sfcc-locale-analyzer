@@ -1,0 +1,46 @@
+{
+    "app_foo_core":{
+       "form":{
+          "foo":{
+             "default":"bar"
+          }
+       }
+    },
+    "cartridge_a":{
+       "localegroupa":{
+          "sunny.day":{
+             "ca_EN":"Sunny Day CA EN",
+             "default":"Sunny Day",
+             "en":"Sunny Day EN",
+             "fr":"Journée ensoleillée",
+             "it":"Giorno soleggiato",
+             "ja_JP":"晴れた日"
+          }
+       }
+    },
+    "cartridge_b":{
+       "localegroupb":{
+          "starry.night":{
+             "ca_EN":"Darky Moon",
+             "default":"Stary Night",
+             "en":"Light Moon",
+             "ja_JP":"星が輝く夜"
+          }
+       }
+    },
+    "cartridge_c":{
+       "localegroupa":{
+          "sunny.day":{
+             "it":"Wrong Italian"
+          }
+       },
+       "localegroupc":{
+          "green.grass":{
+             "default":"Green Grass",
+             "fr":"L'herbe verte",
+             "it":"Erba verde",
+             "ja_JP":"緑の草"
+          }
+       }
+    }
+ }

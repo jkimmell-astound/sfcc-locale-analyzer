@@ -1,0 +1,26 @@
+[
+    {
+       "localeGroup":"form",
+       "properties":[
+          "foo"
+       ]
+    },
+    {
+       "localeGroup":"localegroupa",
+       "properties":[
+          "sunny.day"
+       ]
+    },
+    {
+       "localeGroup":"localegroupb",
+       "properties":[
+          "starry.night"
+       ]
+    },
+    {
+       "localeGroup":"localegroupc",
+       "properties":[
+          "green.grass"
+       ]
+    }
+ ]

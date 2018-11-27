@@ -1,3 +1,4 @@
-node_modules/
-output/
+node_modules
+output/*
 config.json
+config.*.json
