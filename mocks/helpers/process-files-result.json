@@ -1,0 +1,146 @@
+[
+    {
+      "file": "/cartridges/app_foo_core/cartridge/templates/resources/form.properties",
+      "cartridgeName": "app_foo_core",
+      "localeGroup": "form",
+      "locale": "default",
+      "properties": {
+        "foo": "bar"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_a/cartridge/templates/resources/localegroupa_ca_EN.properties",
+      "cartridgeName": "cartridge_a",
+      "localeGroup": "localegroupa",
+      "locale": "ca_EN",
+      "properties": {
+        "sunny.day": "Sunny Day CA EN"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_a/cartridge/templates/resources/localegroupa_en.properties",
+      "cartridgeName": "cartridge_a",
+      "localeGroup": "localegroupa",
+      "locale": "en",
+      "properties": {
+        "sunny.day": "Sunny Day EN"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_a/cartridge/templates/resources/localegroupa_fr.properties",
+      "cartridgeName": "cartridge_a",
+      "localeGroup": "localegroupa",
+      "locale": "fr",
+      "properties": {
+        "sunny.day": "Journée ensoleillée"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_a/cartridge/templates/resources/localegroupa_it.properties",
+      "cartridgeName": "cartridge_a",
+      "localeGroup": "localegroupa",
+      "locale": "it",
+      "properties": {
+        "sunny.day": "Giorno soleggiato"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_a/cartridge/templates/resources/localegroupa_ja_JP.properties",
+      "cartridgeName": "cartridge_a",
+      "localeGroup": "localegroupa",
+      "locale": "ja_JP",
+      "properties": {
+        "sunny.day": "晴れた日"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_a/cartridge/templates/resources/localegroupa.properties",
+      "cartridgeName": "cartridge_a",
+      "localeGroup": "localegroupa",
+      "locale": "default",
+      "properties": {
+        "sunny.day": "Sunny Day"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_b/cartridge/templates/resources/localegroupb_ca_EN.properties",
+      "cartridgeName": "cartridge_b",
+      "localeGroup": "localegroupb",
+      "locale": "ca_EN",
+      "properties": {
+        "starry.night": "Darky Moon"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_b/cartridge/templates/resources/localegroupb_en.properties",
+      "cartridgeName": "cartridge_b",
+      "localeGroup": "localegroupb",
+      "locale": "en",
+      "properties": {
+        "starry.night": "Light Moon"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_b/cartridge/templates/resources/localegroupb_ja_JP.properties",
+      "cartridgeName": "cartridge_b",
+      "localeGroup": "localegroupb",
+      "locale": "ja_JP",
+      "properties": {
+        "starry.night": "星が輝く夜"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_b/cartridge/templates/resources/localegroupb.properties",
+      "cartridgeName": "cartridge_b",
+      "localeGroup": "localegroupb",
+      "locale": "default",
+      "properties": {
+        "starry.night": "Stary Night"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_c/cartridge/templates/resources/localegroupa_it.properties",
+      "cartridgeName": "cartridge_c",
+      "localeGroup": "localegroupa",
+      "locale": "it",
+      "properties": {
+        "sunny.day": "Wrong Italian"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_c/cartridge/templates/resources/localegroupc_fr.properties",
+      "cartridgeName": "cartridge_c",
+      "localeGroup": "localegroupc",
+      "locale": "fr",
+      "properties": {
+        "green.grass": "L'herbe verte"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_c/cartridge/templates/resources/localegroupc_it.properties",
+      "cartridgeName": "cartridge_c",
+      "localeGroup": "localegroupc",
+      "locale": "it",
+      "properties": {
+        "green.grass": "Erba verde"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_c/cartridge/templates/resources/localegroupc_ja_JP.properties",
+      "cartridgeName": "cartridge_c",
+      "localeGroup": "localegroupc",
+      "locale": "ja_JP",
+      "properties": {
+        "green.grass": "緑の草"
+      }
+    },
+    {
+      "file": "/cartridges/cartridge_c/cartridge/templates/resources/localegroupc.properties",
+      "cartridgeName": "cartridge_c",
+      "localeGroup": "localegroupc",
+      "locale": "default",
+      "properties": {
+        "green.grass": "Green Grass"
+      }
+    }
+  ]

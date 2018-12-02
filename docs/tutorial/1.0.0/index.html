@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3>tutorial 1.0.0</h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>Locale Analyzer</h1><h2>Requirements</h2><ul>
+<li>This application may run on previous versions of NodeJS but has been developed and tested with version: <code>v10.13.0</code></li>
+<li>While it may run with other repository structures the one found in the <code>mocks/sample_repo</code> is what this was developed against.</li>
+</ul>
+<h2>Objectives</h2><p><em>Create a CSV / Spreadsheet file that meets the following requirements:</em></p>
+<ul>
+<li>All properties found in the cartridges of repository should be listed as rows in the spreadsheet</li>
+<li>Properties should be grouped by locale group and then cartridge their found in</li>
+<li>Any cartridges that have a name that looks like: <code>app_foo_core</code> should have all properties found in all files</li>
+<li>All locales found in the site meta data of the repository should be listed as columns in the spreadsheet</li>
+<li>Each property row, will contain a column and that contains the original cartridge that the property was found in</li>
+<li>Properties should be sorted alpha-numerically within their locale group</li>
+<li>Locale Groups should be sorted alphanumerically</li>
+</ul>
+<h2>Example</h2><p>Give the sample repository in the <code>mocks/sample_repo</code> directory, the following CSV will be generated:</p>
+<pre class="prettyprint source"><code>Cartridge,Locale Group,Property,Defined In,default,en,ca,fr,it,ja,ca_EN,ja_JP
+app_foo_core,form,foo,app_foo_core,bar,,,,,,,
+app_foo_core,localegroupa,sunny.day,cartridge_c,,,,,,,,
+app_foo_core,localegroupb,starry.night,cartridge_b,,,,,,,,
+app_foo_core,localegroupc,green.grass,cartridge_c,,,,,,,,
+cartridge_a,localegroupa,sunny.day,cartridge_c,Sunny Day,Sunny Day EN,,Journée ensoleillée,Giorno soleggiato,,Sunny Day CA EN,晴れた日
+cartridge_c,localegroupa,sunny.day,cartridge_c,,,,,Wrong Italian,,,
+cartridge_c,localegroupc,green.grass,cartridge_c,Green Grass,,,L'herbe verte,Erba verde,,,緑の草
+cartridge_b,localegroupb,starry.night,cartridge_b,Stary Night,Light Moon,,,,,Darky Moon,星が輝く夜</code></pre><p>The above CSV will be generated from the following JSON:</p>
+<pre class="prettyprint source lang-JSON"><code>{
+    &quot;app_foo_core&quot;:{
+       &quot;form&quot;:{
+          &quot;foo&quot;:{
+             &quot;default&quot;:&quot;bar&quot;
+          }
+       }
+    },
+    &quot;cartridge_a&quot;:{
+       &quot;localegroupa&quot;:{
+          &quot;sunny.day&quot;:{
+             &quot;ca_EN&quot;:&quot;Sunny Day CA EN&quot;,
+             &quot;default&quot;:&quot;Sunny Day&quot;,
+             &quot;en&quot;:&quot;Sunny Day EN&quot;,
+             &quot;fr&quot;:&quot;Journée ensoleillée&quot;,
+             &quot;it&quot;:&quot;Giorno soleggiato&quot;,
+             &quot;ja_JP&quot;:&quot;晴れた日&quot;
+          }
+       }
+    },
+    &quot;cartridge_b&quot;:{
+       &quot;localegroupb&quot;:{
+          &quot;starry.night&quot;:{
+             &quot;ca_EN&quot;:&quot;Darky Moon&quot;,
+             &quot;default&quot;:&quot;Stary Night&quot;,
+             &quot;en&quot;:&quot;Light Moon&quot;,
+             &quot;ja_JP&quot;:&quot;星が輝く夜&quot;
+          }
+       }
+    },
+    &quot;cartridge_c&quot;:{
+       &quot;localegroupa&quot;:{
+          &quot;sunny.day&quot;:{
+             &quot;it&quot;:&quot;Wrong Italian&quot;
+          }
+       },
+       &quot;localegroupc&quot;:{
+          &quot;green.grass&quot;:{
+             &quot;default&quot;:&quot;Green Grass&quot;,
+             &quot;fr&quot;:&quot;L'herbe verte&quot;,
+             &quot;it&quot;:&quot;Erba verde&quot;,
+             &quot;ja_JP&quot;:&quot;緑の草&quot;
+          }
+       }
+    }
+ }</code></pre><h2>Getting Started</h2><p>Install the necessary <code>node_modules</code>:</p>
+<pre class="prettyprint source"><code>npm install</code></pre><p>Copy <code>config.sample.json</code> to <code>config.json</code> and update the relevant values:</p>
+<pre class="prettyprint source"><code>cp config.sample.json config.json</code></pre><p>Test the application:</p>
+<pre class="prettyprint source"><code>npm test</code></pre><p>Lint the application:</p>
+<pre class="prettyprint source"><code>npm run lint</code></pre><p>Generate Documentation:</p>
+<pre class="prettyprint source"><code>npm run docs</code></pre><p>Generate Coverage Report:</p>
+<pre class="prettyprint source"><code>npm run cover</code></pre><p>Run the application:</p>
+<pre class="prettyprint source"><code>npm start</code></pre><h2>Configuration</h2><p>This application can be configured using a <code>config.json</code> file in the root of the repository.</p>
+<p>The following are some notes for each attribute and what they do:</p>
+<p><code>`</code></p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Helpers.html">Helpers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#config">config</a></li><li><a href="global.html#process">process</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Dec 01 2018 22:17:59 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
