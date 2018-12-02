@@ -1,0 +1,9 @@
+Cartridge,Locale Group,Property,Defined In,default,en,ca,fr,it,ja,ca_EN,ja_JP
+app_foo_core,form,foo,app_foo_core,bar,,,,,,,
+app_foo_core,localegroupa,sunny.day,cartridge_c,,,,,,,,
+app_foo_core,localegroupb,starry.night,cartridge_b,,,,,,,,
+app_foo_core,localegroupc,green.grass,cartridge_c,,,,,,,,
+cartridge_a,localegroupa,sunny.day,cartridge_c,Sunny Day,Sunny Day EN,,Journée ensoleillée,Giorno soleggiato,,Sunny Day CA EN,晴れた日
+cartridge_c,localegroupa,sunny.day,cartridge_c,,,,,Wrong Italian,,,
+cartridge_c,localegroupc,green.grass,cartridge_c,Green Grass,,,L'herbe verte,Erba verde,,,緑の草
+cartridge_b,localegroupb,starry.night,cartridge_b,Stary Night,Light Moon,,,,,Darky Moon,星が輝く夜

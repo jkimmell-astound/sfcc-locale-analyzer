@@ -1,0 +1,15 @@
+{
+  "cartridgsToExclude": [
+      "should_be_ignored"
+  ],
+  "cartridgeSortOrder": [
+      "app_foo_core",
+      "cartridge_a",
+      "cartridge_c",
+      "cartridge_b"
+  ],
+  "repo": "./mocks/sample_repo/",
+  "propertyGlobPattern": "cartridges/**/cartridge/templates/resources/**/*.properties",
+  "primaryLanguage": "en",
+  "csvOutput": "./output/results.csv"
+}
