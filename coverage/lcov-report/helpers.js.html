@@ -563,7 +563,40 @@
 518
 519
 520
-521</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -576,6 +609,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -600,6 +637,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">167x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">167x</span>
@@ -610,6 +651,17 @@
 <span class="cline-any cline-yes">166x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">166x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -666,6 +718,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -696,6 +751,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -705,6 +763,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
@@ -730,6 +791,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1106,6 +1172,10 @@ class Helpers {
   /**
    * Retrieve the Locale Group from a file
    *
+   * @example
+   * // Returns localgroupa
+   * Helpers.getLocaleGroup('mocks/sample_repo/cartridges/cartridge_a/cartridge/templates/resources/localegroupa_ca_EN.properties')
+   *
    * @param {string} file File to analyze
    * @returns {string} Locale Group
    */
@@ -1115,6 +1185,10 @@ class Helpers {
 &nbsp;
   /**
    * Retrieve the cartridge name from a file
+   *
+   * @example
+   * // Returns cartridge_a
+   * Helpers.getCartridgeName('mocks/sample_repo/cartridges/cartridge_a/cartridge/templates/resources/localegroupa_ca_EN.properties')
    *
    * @param {string} file File to Analyze
    * @return {string} Cartrige Name
@@ -1133,7 +1207,18 @@ class Helpers {
   }
 &nbsp;
   /**
-   * Get Locale
+   * Get Locale from a file
+   *
+   * @example
+   * // Rreturns ca_EN
+   * Helpers.getLocale('mocks/sample_repo/cartridges/cartridge_a/cartridge/templates/resources/localegroupa_ca_EN.properties')
+     * @example
+   * // Rreturns default
+   * Helpers.getLocale('mocks/sample_repo/cartridges/cartridge_a/cartridge/templates/resources/localegroupa.properties')
+     * @example
+   * // Returns en
+   * Helpers.getLocale('mocks/sample_repo/cartridges/cartridge_a/cartridge/templates/resources/localegroupa_en.properties')
+   *
    * @param {string} fileName File to get locale from
    * @returns {string} locale of the file
    */
@@ -1186,6 +1271,9 @@ class Helpers {
 &nbsp;
     let returnResults = false
 &nbsp;
+    /**
+     * Try to build the final results
+     */
     try {
       let results = Helpers.processFiles(config.repo, files, config.cartridgsToExclude)
       results = Helpers.organize(results, allLocales)
@@ -1216,6 +1304,9 @@ class Helpers {
   static getAllLocales (directory, primaryLanguage) {
     log.debug('getAllLocales -&gt; Finding all locales in the sites meta data...')
 &nbsp;
+    /**
+     * Find all Site Prefence files, so we can look for locales across all sites
+     */
     let files = glob.sync(`${directory}/sites/site_template/**/preferences.xml`)
     let locales = []
 &nbsp;
@@ -1225,6 +1316,9 @@ class Helpers {
     })
 &nbsp;
     files.forEach(function (file) {
+      /**
+       * Process the XML Document and find all configured locales
+       */
       const result = JSON.parse(convert.xml2json(fs.readFileSync(file)))
 &nbsp;
       var standardPreferences = result.elements.pop().elements[ 0 ].elements
@@ -1258,6 +1352,11 @@ class Helpers {
       })
     })
 &nbsp;
+    /**
+     * Sort all of the locales found
+     * default should be first, then language only locales sorted alphabetically
+     * and then country locales sorted alphabetically
+     */
     log.debug('getAllLocales -&gt; Sorting found locales...')
     locales = locales.sort(function (a, b) {
       <span class="missing-if-branch" title="if path not taken" >I</span>if (a === b) <span class="cstat-no" title="statement not covered" >return 0</span>
@@ -1609,7 +1708,7 @@ module.exports = Helpers
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Dec 01 2018 22:09:41 GMT-0500 (EST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Dec 03 2018 09:39:48 GMT-0500 (Eastern Standard Time)
 </div>
 </div>
 <script src="prettify.js"></script>

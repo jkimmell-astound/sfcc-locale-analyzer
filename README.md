@@ -1,7 +1,8 @@
 # Locale Analyzer
 
 ## Requirements
-* This application may run on previous versions of NodeJS but has been developed and tested with version: `v10.13.0`
+* This application may run on previous versions of NodeJS but has been developed and tested with version: `~v10.0.0`
+    * If this is different from the current version of NodeJS on your machine, you can use the NVM tool to install another: https://github.com/creationix/nvm
 * While it may run with other repository structures the one found in the `mocks/sample_repo` is what this was developed against.
 
 ## Objectives
@@ -120,4 +121,20 @@ This application can be configured using a `config.json` file in the root of the
 
 The following are some notes for each attribute and what they do:
 
+```
+{
+  "cartridgsToExclude": [ // Which cartridges should be excluded from anlysis
+      "should_be_ignored"
+  ],
+  "cartridgeSortOrder": [ // How are cartridges sorted, in regards to the "Cartridge Path"
+      "app_foo_core",
+      "cartridge_a",
+      "cartridge_c",
+      "cartridge_b"
+  ],
+  "repo": "./mocks/sample_repo/", // Code Repository to analyze
+  "propertyGlobPattern": "cartridges/**/cartridge/templates/resources/**/*.properties", // A "Glob" pattern for the locale property files
+  "primaryLanguage": "en", // The Primary language of the application, this will be sorted first after "default"
+  "csvOutput": "./output/results.csv" // Where should the CSV output go
+}
 ```
