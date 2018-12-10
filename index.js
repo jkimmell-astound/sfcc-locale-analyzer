@@ -45,22 +45,27 @@ function analyzeFile(value) {
     console.log("Analyzing: " + value + "...")
 
     let localeFile = {
-	"file": value,
-	"fileName": value.split("/").pop(),
-	"name": value.split("/").pop().replace(".properties", ""),
-	"localeSection": ""
+		"file": value,
+		"fileName": value.split("/").pop(),
+		"name": value.split("/").pop().replace(".properties", ""),
+		"localeSection": ""
     }
 
     let localeParts = localeFile.name.split("_")
-    delete localeParts[0]
+	delete localeParts[0]
 
-    localeFile.locale = localeParts.join("_").substr(1)
+	localeFile.locale = localeParts.join("_").substr(1)
+	
+	if (localeFile.locale !== "" && config.localesToUse.indexOf(localeParts[1]) <= -1) {
+		console.log("Locale file, is not in the requested locales: " + localeFile.fileName)
+		return
+	}
 
     /**
      * If no locale was found, this must be a default file
      */
     if (localeFile.locale === "") {
-	localeFile.locale = "default"
+		localeFile.locale = "default"
     }
 
     /**
@@ -72,11 +77,11 @@ function analyzeFile(value) {
      * Do some prep work / initialization to the localeSections array
      */
     if (!localeSections[localeFile.localeSection]) {
-	localeSections[localeFile.localeSection] = {
-	    files: [],
-	    locales: [],
-	    entries: {}
-	}
+		localeSections[localeFile.localeSection] = {
+			files: [],
+			locales: [],
+			entries: {}
+		}
     }
 
     localeSections[localeFile.localeSection].files.push(localeFile.file)
