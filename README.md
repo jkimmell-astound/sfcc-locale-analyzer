@@ -1,5 +1,7 @@
 # Locale Analyzer
 
+[![Build Status](https://travis-ci.org/kimmellj/sfcc-locale-analyzer.svg?branch=develop)](https://travis-ci.org/kimmellj/sfcc-locale-analyzer)
+
 ## Requirements
 * This application may run on previous versions of NodeJS but has been developed and tested with version: `~v10.0.0`
     * If this is different from the current version of NodeJS on your machine, you can use the NVM tool to install another: https://github.com/creationix/nvm
