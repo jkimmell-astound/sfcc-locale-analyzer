@@ -1,18 +1,19 @@
 const glob = require('glob')
 const path = require('path')
 const fs = require('fs')
+const eol = require('eol')
 
 const helpersProcessFilesResult = require('./mocks/helpers/process-files-result.json')
 const helpersGetAllLocalesResult = require('./mocks/helpers/get-all-locales-result.json')
 const helpersOrganizeResult = require('./mocks/helpers/organize-result.json')
 const helpersFindAllPropertiesResult = require('./mocks/helpers/find-all-properties-result.json')
-const helpersCreateCSVResult = fs.readFileSync('./mocks/helpers/create-csv.csv')
-const invalidCSVData = fs.readFileSync('./mocks/helpers/invalid-csv.csv')
+const helpersCreateCSVResult = eol.lf(fs.readFileSync('./mocks/helpers/create-csv.csv').toString())
+const invalidCSVData = eol.lf(fs.readFileSync('./mocks/helpers/invalid-csv.csv').toString())
 
 /**
  * Disable Console Log
  */
-// console.log = jest.fn()
+console.log = jest.fn()
 
 const config = {
   'cartridgsToExclude': [
