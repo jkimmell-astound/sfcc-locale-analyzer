@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
-    "test": "eslint . && jest .",
+    "lint": "eslint src/",
+    "test": "eslint src/ && jest src/",
     "cover": "jest --coverage",
-    "start": "node index.js",
-    "docs": "jsdoc -R ./README.md -P ./package.json -d docs/ ."
+    "process_repo": "node src/operations/index.js",
+    "docs": "jsdoc -R ./README.md -P ./package.json -d docs/ src/"
   },
   "keywords": [],
   "author": "",
