@@ -3,12 +3,12 @@ const path = require('path')
 const fs = require('fs')
 const eol = require('eol')
 
-const helpersProcessFilesResult = require('./mocks/helpers/process-files-result.json')
-const helpersGetAllLocalesResult = require('./mocks/helpers/get-all-locales-result.json')
-const helpersOrganizeResult = require('./mocks/helpers/organize-result.json')
-const helpersFindAllPropertiesResult = require('./mocks/helpers/find-all-properties-result.json')
-const helpersCreateCSVResult = eol.lf(fs.readFileSync('./mocks/helpers/create-csv.csv').toString())
-const invalidCSVData = eol.lf(fs.readFileSync('./mocks/helpers/invalid-csv.csv').toString())
+const helpersProcessFilesResult = require('../../mocks/helpers/process-files-result.json')
+const helpersGetAllLocalesResult = require('../../mocks/helpers/get-all-locales-result.json')
+const helpersOrganizeResult = require('../../mocks/helpers/organize-result.json')
+const helpersFindAllPropertiesResult = require('../../mocks/helpers/find-all-properties-result.json')
+const helpersCreateCSVResult = eol.lf(fs.readFileSync(path.join(__dirname, '..', '..', 'mocks', 'helpers', 'create-csv.csv')).toString())
+const invalidCSVData = eol.lf(fs.readFileSync(path.join(__dirname, '..', '..', 'mocks', 'helpers', 'invalid-csv.csv')).toString())
 
 /**
  * Disable Console Log
@@ -25,7 +25,7 @@ const config = {
     'cartridge_c',
     'cartridge_b'
   ],
-  'repo': `${path.join(__dirname, 'mocks', 'sample_repo')}`,
+  'repo': `${path.join(__dirname, '..', '..', 'mocks', 'sample_repo')}`,
   'propertyGlobPattern': `${path.join('cartridges', '**', 'cartridge', 'templates', 'resources', '**', '*.properties')}`,
   'primaryLanguage': 'en'
 }
