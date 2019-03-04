@@ -103,15 +103,15 @@ test('Helpers -> createCSV -> Should return the correct result', async () => {
   const csvResults = Helpers.createCSV(results, config.cartridgeSortOrder)
   expect(csvResults).toEqual(`${helpersCreateCSVResult}`)
 
-  const csvIsValid = await Helpers.validateCSV(csvResults, config.repo)
+  const csvIsValid = await Helpers.validateCSV(csvResults, config)
 
   expect(csvIsValid).toBe(true)
 })
 
 test('Helpers -> validateCSV -> Should validate valid and invalid csv correctly', async () => {
-  const csvIsValid = await Helpers.validateCSV(helpersCreateCSVResult.toString(), config.repo)
+  const csvIsValid = await Helpers.validateCSV(helpersCreateCSVResult.toString(), config)
   expect(csvIsValid).toBe(true)
 
-  const csvIsNotValid = await Helpers.validateCSV(invalidCSVData.toString(), config.repo)
+  const csvIsNotValid = await Helpers.validateCSV(invalidCSVData.toString(), config)
   expect(csvIsNotValid).toBe(false)
 })

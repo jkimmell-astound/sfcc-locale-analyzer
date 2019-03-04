@@ -8,7 +8,7 @@ const csvStringify = require('csv-stringify/lib/sync')
 const log = require('pretty-log')
 const csv = require('csvtojson')
 
-log.debug = function () {}
+// log.debug = function () {}
 
 const cartridgeNameRegex = new RegExp('(.*?)/cartridge/templates/')
 
@@ -485,6 +485,7 @@ class Helpers {
     })
 
     log.debug('createCSV -> Finished generating the CSV!')
+    log.debug('createCSV -> Stringifing the CSV ...')
 
     return csvStringify(csvResults)
   }
@@ -494,60 +495,99 @@ class Helpers {
    * that it matches the files in the repository
    *
    * @param {string} csvResults CSV Results
-   * @param {string} repo Code Repository
+   * @param {string} config Run Config
    * @returns {boolean} Is the CSV valid?
    */
-  static async validateCSV (csvResults, repo) {
+  static async validateCSV (csvResults, config) {
     if (!csvResults) {
       log.error('You must specify csv results!')
       return false
     }
 
-    if (!repo) {
+    if (!config.repo) {
       log.error('You must specify a repo!')
       return false
     }
 
+    log.debug('validateCSV -> Starting to validate the generated CSV (this may take a while)...')
+
     const csvJSON = await csv().fromString(csvResults)
+
+    /**
+     * Find all .properties files in the repo using a file "glob"
+     * If files is "falsey" return fals for the method
+     */
+    const fileGlob = path.join(config.repo, config.propertyGlobPattern)
+    const files = glob.sync(fileGlob)
+
+    if (!files) {
+      log.error('buildSummary -> No property files were found in the repository!')
+      return false
+    }
+
     let csvValid = true
 
-    csvJSON.forEach((row) => {
-      const cartName = row.Cartridge
-      const localeGroup = row['Locale Group']
-      const property = row.Property
+    /**
+     * Try to build the final results
+     */
+    try {
+      let results = Helpers.processFiles(config.repo, files, config.cartridgsToExclude)
 
-      delete row.Cartridge
-      delete row['Locale Group']
-      delete row.Property
-      delete row['Defined In']
+      csvJSON.forEach(function (row) {
+        const cartName = row.Cartridge
+        const localeGroup = row['Locale Group']
+        const property = row.Property
 
-      const locales = row
+        delete row.Cartridge
+        delete row['Locale Group']
+        delete row.Property
+        delete row['Defined In']
 
-      Object.keys(locales).forEach((locale) => {
-        const propertyValue = locales[locale]
-        const fileName = `${repo}/**/${cartName}/cartridge/templates/resources/${localeGroup}${locale !== 'default' ? '_' + locale : ''}.properties`
-        const files = glob.sync(fileName)
+        let rowValid = true
 
-        if (files.length > 1) {
-          throw new Error(`More than one file found for pattern: ${fileName}`)
+        for (var locale in row) {
+          if (row.hasOwnProperty(locale)) {
+            const localeValue = row[locale]
+
+            // No need to validate an empty CSV property value
+            if (localeValue === '') {
+              continue
+            }
+
+            let localeValueFound = false
+
+            results.forEach((result) => {
+              if (
+                result.cartridgeName === cartName &&
+                result.locale === locale &&
+                result.localeGroup === localeGroup
+              ) {
+                for (var propKey in result.properties) {
+                  if (result.properties.hasOwnProperty(propKey)) {
+                    const propValue = result.properties[propKey]
+
+                    if (propKey === property && propValue === localeValue) {
+                      localeValueFound = true
+                    }
+                  }
+                }
+              }
+            })
+
+            if (!localeValueFound) {
+              rowValid = false
+            }
+          }
         }
 
-        const file = files.pop()
-
-        if (propertyValue === '') {
-          if (file) {
-            // console.log(`Empty property: ${property} found for file: ${fileName}`)
-            throw new Error('Need to code for this scenario')
-          }
-        } else {
-          const fileProps = PropertiesReader(file)._properties // eslint-disable-line no-underscore-dangle
-          if (!fileProps[property] || fileProps[property] !== propertyValue) {
-            log.error(`File: ${file} does not contain a property:'${property}' with value '${propertyValue}'`)
-            csvValid = false
-          }
+        if (!rowValid) {
+          log.error(`Row not valid! ${JSON.stringify(row)}`)
+          csvValid = false
         }
       })
-    })
+    } catch (e) {
+      throw e
+    }
 
     return csvValid
   }
