@@ -274,6 +274,9 @@ class Helpers {
    * @returns {Array} An array of property files and some relevant meta data about the file
    */
   static processFiles (repo, files, cartridgesToExclude) {
+    // Ensure the path separators are unix style
+    repo = repo.replace(/\\/g, '/')
+
     log.debug('processFiles -> Starting to process the files...')
 
     let filteredResults = files.filter((file) => {
