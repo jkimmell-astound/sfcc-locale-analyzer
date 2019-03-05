@@ -19,7 +19,7 @@ async function process () {
   if (!csvResults) {
     log.error('Issues generating the CSV file!')
   } else {
-    const validationResults = await Helpers.validateCSV(csvResults, config.repo)
+    const validationResults = await Helpers.validateCSV(csvResults, config)
     if (validationResults) {
       fs.writeFileSync(config.csvOutput, csvResults)
 

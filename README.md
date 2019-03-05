@@ -1,10 +1,12 @@
 # Locale Analyzer
 
-[![Build Status](https://travis-ci.org/kimmellj/sfcc-locale-analyzer.svg?branch=develop)](https://travis-ci.org/kimmellj/sfcc-locale-analyzer)
+[![Build Status](https://travis-ci.org/jkimmell-astound/sfcc-locale-analyzer.svg?branch=develop)](https://travis-ci.org/jkimmell-astound/sfcc-locale-analyzer)
 
 ## Requirements
 * This application may run on previous versions of NodeJS but has been developed and tested with version: `~v10.0.0`
-    * If this is different from the current version of NodeJS on your machine, you can use the NVM tool to install another: https://github.com/creationix/nvm
+    * If this is different from the current version of NodeJS on your machine, you can use the NVM tool to install another:
+        * Mac - https://github.com/creationix/nvm
+        * Windows - https://github.com/coreybutler/nvm-windows
 * While it may run with other repository structures the one found in the `mocks/sample_repo` is what this was developed against.
 
 ## Objectives
@@ -90,31 +92,43 @@ npm install
 ```
 
 Copy `config.sample.json` to `config.json` and update the relevant values:
+
+_`config.json` should contain the real values to be used when generating a report from a code base._
 ```
 cp config.sample.json config.json
 ```
 
 Test the application:
+
+_Testing the applicatino will not write any files out but will test the code repo found in the `mocks` folder and ensure the `helpers.js` file generates the correct output given the data in the `mocks` folder._
 ```
 npm test
 ```
 
 Lint the application:
+
+_Ensure all of the JavaScript code adheres to the `eslint` rules defined in `.eslintrc`. Files found in the `.eslintignore` file will be ignored._
 ```
 npm run lint
 ```
 
 Generate Documentation:
+
+_Generate the JSDocs from the JavaScript files in this repo._
 ```
 npm run docs
 ```
 
 Generate Coverage Report:
+
+_Generate a "code coverage" report of the JavaScript files of this repo. The total coverage should always remain above 80%_
 ```
 npm run cover
 ```
 
 Run the application:
+
+_Run the application and generate output stored in the `output` folder based on the configuration found in the `config.json` file._
 ```
 npm start
 ```
@@ -128,7 +142,7 @@ The following are some notes for each attribute and what they do:
   "cartridgsToExclude": [ // Which cartridges should be excluded from anlysis
       "should_be_ignored"
   ],
-  "cartridgeSortOrder": [ // How are cartridges sorted, in regards to the "Cartridge Path"
+  "cartridgeSortOrder": [ // How are cartridges sorted, in regards to the "Cartridge Path". Cartridges on the left of the path should be at the top of the list
       "app_foo_core",
       "cartridge_a",
       "cartridge_c",
