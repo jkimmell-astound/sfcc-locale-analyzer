@@ -202,6 +202,14 @@ class Helpers {
     })
 
     /**
+     * Even if the 'default' locale is not configured for sites, it's necessary for the
+     * property files.
+     */
+    if (locales.indexOf('default') <= -1) {
+      locales.push('default')
+    }
+
+    /**
      * Sort all of the locales found
      * default should be first, then language only locales sorted alphabetically
      * and then country locales sorted alphabetically
